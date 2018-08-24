@@ -1,0 +1,12 @@
+<h1>Users</h1>
+<input (input)="filter($event.target.value)" >
+<mat-list> [@listStagger]="users$">
+  <mat-list-item *ngFor="let user of users$">
+    <a routerLink="/details/{{user.id}}">{{ user.name }}</a>
+
+    <mat-list>
+      <mat-list-item>{{ user.email }}</mat-list-item>
+      <mat-list-item><a href="http://{{ user.website }}">{{ user.website }}</a></mat-list-item>
+    </mat-list>
+  </mat-list-item>
+</mat-list>
